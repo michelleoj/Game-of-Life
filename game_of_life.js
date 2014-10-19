@@ -13,7 +13,7 @@ app.set("jsonp callback", true);
 
 //Routing 
 
-app.get('/', function(req, res) {
+app.get('/nextgen', function(req, res) {
 	
 	if (req.query.callback) {
 		var nextGen = helper.getNextGen(req.query.liveCells, req.query.M, req.query.N);
