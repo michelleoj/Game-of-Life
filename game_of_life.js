@@ -17,7 +17,6 @@ app.get('/nextgen', function(req, res) {
 	
 	if (req.query.callback) {
 		var nextGen = helper.getNextGen(req.query.liveCells, req.query.M, req.query.N);
-		console.log('next gen: ', nextGen);
 		res.jsonp(nextGen);
 	}
 	
@@ -25,9 +24,7 @@ app.get('/nextgen', function(req, res) {
 
 
 //Start Server
-var server = app.listen(3000, function() {
+var server = app.listen(5000, function() {
 	var host = server.address().address;
 	var port = server.address().port;
-
-	console.log('Example applistening at http://%s:%s', host, port);
 });
