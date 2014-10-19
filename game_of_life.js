@@ -1,12 +1,11 @@
 var helper = require('./game_functions');
 var express = require('express');
 var bodyParser = require('body-parser');
+var logfmt = require("logfmt");
 var app = express();
 
+app.use(logfmt.requestLogger());
 app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({
-//   extended: true
-// }));
 
 app.set("jsonp callback", true);
 
@@ -24,7 +23,5 @@ app.get('/nextgen', function(req, res) {
 
 
 //Start Server
-var server = app.listen(5000, function() {
-	var host = server.address().address;
-	var port = server.address().port;
-});
+var port = Number(process.env.PORT || 5000);
+var server = app.listen(port);
