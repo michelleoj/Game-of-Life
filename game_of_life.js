@@ -15,6 +15,7 @@ app.set("jsonp callback", true);
 app.get('/nextgen', function(req, res) {
 	
 	if (req.query.callback) {
+		console.log('hey', req.query);
 		var nextGen = helper.getNextGen(req.query.liveCells, req.query.M, req.query.N);
 		res.jsonp(nextGen);
 	}
