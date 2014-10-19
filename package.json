@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/michelleoj/Game-of-Life/issues"
   },
-  "homepage": "https://github.com/michelleoj/Game-of-Life"
+  "homepage": "https://github.com/michelleoj/Game-of-Life",
+  "engines": {
+    "node": "0.10.x"
+  }
 }
